@@ -56,7 +56,7 @@ document.documentElement.style.overflow = 'hidden';
   function isTimeInRange() {
     const now = new Date();
     const startHour = 8;
-    const endHour = 22;
+    const endHour = 17;
     const currentHour = now.getHours();
     const currentMinute = now.getMinutes();
     return isWeekday() && currentHour >= startHour && currentHour <= endHour && (currentHour !== endHour || currentMinute === 0);
