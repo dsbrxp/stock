@@ -15,7 +15,7 @@
 <body>
 
 <!-- TradingView Widget BEGIN -->
-<div id="widget" class="tradingview-widget-container">
+<div class="tradingview-widget-container">
  
   <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
   {
@@ -32,7 +32,7 @@
   
 
 <!-- Sample HTML content -->
-<p>11% Discount</p>
+<p>12% Discount</p>
 <p>75% off today</p>
 <p>No percentage here</p>
 
@@ -57,7 +57,10 @@
 
   function executeAfterPause() {
      var csuContainer = document.getElementById('csu');
-     var widgetContainer = document.getElementById('widget');
+
+     var widgetContainer = document.getElementsByClassName('tradingview-widget-container');
+
+    
       var searchText = "CSU";
     // Get all the text content on the page
  //   var pageText = document.body.innerText || document.body.textContent;
