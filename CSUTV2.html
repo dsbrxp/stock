@@ -32,7 +32,7 @@
   
 
 <!-- Sample HTML content -->
-<p>1% Discount</p>
+<p>2% Discount</p>
 <p>75% off today</p>
 <p>No percentage here</p>
 
@@ -52,11 +52,14 @@
     // Check if the text contains a "%" symbol
     if (element.textContent.includes('%')) {
       // Extract text to the left of the "%"
-      var textToLeft = element.textContent.split('%')[0].trim();
-
+   //   var textToLeft = element.textContent.split('%')[0].trim();
+       var textToLeft = "true";
+    } else {
+      var textToLeft = "false";
+    }
       // Display the extracted text in the container
       csuContainer.textContent += textToLeft + '\n';
-    }
+    
   });
 </script>
 
