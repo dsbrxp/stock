@@ -32,7 +32,7 @@
   
 
 <!-- Sample HTML content -->
-<p>7% Discount</p>
+<p>8% Discount</p>
 <p>75% off today</p>
 <p>No percentage here</p>
 
@@ -61,13 +61,15 @@ var csuContainer = document.getElementById('csu');
     var searchTextLower = searchText.toLowerCase();
     var pageTextLower = pageText.toLowerCase();
 
+  csuContainer.textContent = pageTextLower;
+
     // Check if the search text is present on the page
     if (pageTextLower.includes(searchTextLower)) {
 
-      csuContainer.textContent ="true";
+  //    csuContainer.textContent ="true";
      // alert('Text found on the page: ' + searchText);
     } else {
-     csuContainer.textContent = "false";
+ //    csuContainer.textContent = "false";
      
      //   alert('Text not found on the page: ' + searchText);
     }
