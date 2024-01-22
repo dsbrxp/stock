@@ -3,6 +3,20 @@
 
 <div class="tradingview-widget-container" style="top:100; position:absolute; transform:scale(0.65); left:-20;">
 
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
+  {
+  "symbol": "TSX:CSU",
+  "width": "325",
+"position": "absolute",
+  "isTransparent": false,
+  "colorTheme": "light",
+  "locale": "en"
+}
+
+  </script>
+</div>
+
+<div id="csu"></div>
 
 <script>
 // Hello Again
@@ -13,7 +27,7 @@
   // Select all elements containing text on the page
  // Select the container element
   var csuContainer = document.getElementById('csu');
-csuContainer.textContent = "Hello World";
+    csuContainer.textContent += "Hello World";
   // Select all elements containing text on the page
   var textElements = document.querySelectorAll('*:not(script):not(style):not(meta):not(link):not(title):not(head):not(html)');
 
@@ -31,20 +45,3 @@ csuContainer.textContent = "Hello World";
 
 
   </script>
-
-
-
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
-  {
-  "symbol": "TSX:CSU",
-  "width": "325",
-"position": "absolute",
-  "isTransparent": false,
-  "colorTheme": "light",
-  "locale": "en"
-}
-
-  </script>
-</div>
-
-<div id="csu"></div>
