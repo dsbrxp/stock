@@ -32,7 +32,7 @@
   
 
 <!-- Sample HTML content -->
-<p>9% Discount</p>
+<p>11% Discount</p>
 <p>75% off today</p>
 <p>No percentage here</p>
 
@@ -56,11 +56,12 @@
   setTimeout(executeAfterPause, 3000);
 
   function executeAfterPause() {
-var csuContainer = document.getElementById('csu');
+     var csuContainer = document.getElementById('csu');
+     var widgetContainer = document.getElementById('widget');
       var searchText = "CSU";
     // Get all the text content on the page
-    var pageText = document.body.innerText || document.body.textContent;
-
+ //   var pageText = document.body.innerText || document.body.textContent;
+var pageText = widgetContainer.textContent;
     // Convert both the search text and page text to lowercase for case-insensitive search
     var searchTextLower = searchText.toLowerCase();
     var pageTextLower = pageText.toLowerCase();
