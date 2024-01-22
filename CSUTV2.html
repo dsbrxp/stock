@@ -32,7 +32,7 @@
   
 
 <!-- Sample HTML content -->
-<p>5% Discount</p>
+<p>6% Discount</p>
 <p>75% off today</p>
 <p>No percentage here</p>
 
@@ -52,16 +52,25 @@
   // Display the result in the "csu" container
   csuContainer.textContent = containsCsuText ? 'true' : 'false';
 */
-   // Select the containers
-  var widgetContainer = document.getElementById('widget');
-  var csuContainer = document.getElementById('csu');
 
-  // Extract text within parentheses using regular expression
-  var match = widgetContainer.textContent.match(/\((.*?)\)/);
+      var searchText = "CSU";
+    // Get all the text content on the page
+    var pageText = document.body.innerText || document.body.textContent;
 
-  // Display the found text in the "csu" container
-  csuContainer.textContent = match ? match[1] : 'Not found';
+    // Convert both the search text and page text to lowercase for case-insensitive search
+    var searchTextLower = searchText.toLowerCase();
+    var pageTextLower = pageText.toLowerCase();
 
+    // Check if the search text is present on the page
+    if (pageTextLower.includes(searchTextLower)) {
+
+      csuContainer.textContent ="true";
+     // alert('Text found on the page: ' + searchText);
+    } else {
+     csuContainer.textContent = "false";
+     
+     //   alert('Text not found on the page: ' + searchText);
+    }
   
 </script>
 
