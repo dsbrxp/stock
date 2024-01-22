@@ -44,11 +44,11 @@
   var widgetContainer = document.getElementById('widget');
   var csuContainer = document.getElementById('csu');
 
-  // Check if the number 36 is present in the "widget" container
-  var containsNumber36 = widgetContainer.textContent.includes('36');
+  // Search for the text "csu" in the "widget" container
+  var containsCsuText = widgetContainer.textContent.includes('CSU');
 
   // Display the result in the "csu" container
-  csuContainer.textContent = containsNumber36 ? 'true' : 'false';
+  csuContainer.textContent = containsCsuText ? 'true' : 'false';
 </script>
 
 </body>
