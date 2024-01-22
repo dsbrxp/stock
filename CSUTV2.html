@@ -32,7 +32,7 @@
   
 
 <!-- Sample HTML content -->
-<p>4% Discount</p>
+<p>5% Discount</p>
 <p>75% off today</p>
 <p>No percentage here</p>
 
@@ -40,6 +40,8 @@
 <div id="csu"></div>
 
 <script>
+
+  /*
   // Select the containers
   var widgetContainer = document.getElementById('widget');
   var csuContainer = document.getElementById('csu');
@@ -49,6 +51,18 @@
 
   // Display the result in the "csu" container
   csuContainer.textContent = containsCsuText ? 'true' : 'false';
+*/
+   // Select the containers
+  var widgetContainer = document.getElementById('widget');
+  var csuContainer = document.getElementById('csu');
+
+  // Extract text within parentheses using regular expression
+  var match = widgetContainer.textContent.match(/\((.*?)\)/);
+
+  // Display the found text in the "csu" container
+  csuContainer.textContent = match ? match[1] : 'Not found';
+
+  
 </script>
 
 </body>
