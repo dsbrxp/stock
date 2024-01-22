@@ -1,5 +1,27 @@
-<!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container" style="top:0; position:absolute; transform:scale(0.65); left:-20;">
+
+Certainly! You can create a container element with the id "csu" and set its content to the extracted text. Here's the modified code:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #csu {
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+<div id="csu"></div>
+
+</div>
+
+<div id="tradingview" class="tradingview-widget-container" style="top:0; position:absolute; transform:scale(0.65); left:-20;">
 
 
 <script>
@@ -8,6 +30,24 @@
   //    document.documentElement.style.transform = "scale(0.65)";
  //     document.documentElement.style.top = "0";
 
+  // Select all elements containing text on the page
+ // Select the container element
+  var csuContainer = document.getElementById('csu');
+
+  // Select all elements containing text on the page
+  var textElements = document.querySelectorAll('*:not(script):not(style):not(meta):not(link):not(title):not(head):not(html)');
+
+  // Iterate through the elements
+  textElements.forEach(function (element) {
+    // Check if the text contains a "%" symbol
+    if (element.textContent.includes('%')) {
+      // Extract text to the left of the "%"
+      var textToLeft = element.textContent.split('%')[0].trim();
+
+      // Display the extracted text in the container
+      csuContainer.textContent += textToLeft + '\n';
+    }
+  });
 
 
   </script>
@@ -19,11 +59,12 @@
   "symbol": "TSX:CSU",
   "width": "325",
 "position": "absolute",
-  "isTransparent": true,
+  "isTransparent": false,
   "colorTheme": "light",
   "locale": "en"
 }
 
   </script>
 </div>
-<!-- TradingView Widget END -->
+
+</body>
