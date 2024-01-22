@@ -32,7 +32,7 @@
   
 
 <!-- Sample HTML content -->
-<p>2% Discount</p>
+<p>3% Discount</p>
 <p>75% off today</p>
 <p>No percentage here</p>
 
@@ -40,27 +40,15 @@
 <div id="csu"></div>
 
 <script>
-  // Select the container element
-  var csuContainer = document.getElementById('csu');
+  // Select the containers
   var widgetContainer = document.getElementById('widget');
+  var csuContainer = document.getElementById('csu');
 
-  // Select all elements containing text on the page
-  var textElements = widgetContainer.querySelectorAll('*:not(script):not(style):not(meta):not(link):not(title):not(head):not(html)');
+  // Check if the number 36 is present in the "widget" container
+  var containsNumber36 = widgetContainer.textContent.includes('36');
 
-  // Iterate through the elements
-  textElements.forEach(function (element) {
-    // Check if the text contains a "%" symbol
-    if (element.textContent.includes('%')) {
-      // Extract text to the left of the "%"
-   //   var textToLeft = element.textContent.split('%')[0].trim();
-       var textToLeft = "true";
-    } else {
-      var textToLeft = "false";
-    }
-      // Display the extracted text in the container
-      csuContainer.textContent += textToLeft + '\n';
-    
-  });
+  // Display the result in the "csu" container
+  csuContainer.textContent = containsNumber36 ? 'true' : 'false';
 </script>
 
 </body>
