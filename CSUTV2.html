@@ -15,7 +15,7 @@
 <body>
 
 <!-- TradingView Widget BEGIN -->
-<div id="view" class="tradingview-widget-container">
+<div id="widget" class="tradingview-widget-container">
  
   <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
   {
@@ -42,9 +42,10 @@
 <script>
   // Select the container element
   var csuContainer = document.getElementById('csu');
+  var widgetContainer = document.getElementById('widget');
 
   // Select all elements containing text on the page
-  var textElements = document.querySelectorAll('*:not(script):not(style):not(meta):not(link):not(title):not(head):not(html)');
+  var textElements = widgetContainer.querySelectorAll('*:not(script):not(style):not(meta):not(link):not(title):not(head):not(html)');
 
   // Iterate through the elements
   textElements.forEach(function (element) {
