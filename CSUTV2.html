@@ -32,7 +32,7 @@
   
 
 <!-- Sample HTML content -->
-<p>13% Discount</p>
+<p>14% Discount</p>
 <p>75% off today</p>
 <p>No percentage here</p>
 
@@ -67,21 +67,21 @@
    // var pageText = widgetContainer.textContent;
    var pageText = widgetContainer.pageText;
     // Convert both the search text and page text to lowercase for case-insensitive search
-    var searchTextLower = searchText.toLowerCase();
-    var pageTextLower = pageText.toLowerCase();
+   // var searchTextLower = searchText.toLowerCase();
+   // var pageTextLower = pageText.toLowerCase();
 
-  csuContainer.textContent = pageTextLower;
+  csuContainer.textContent = "pageText: " + pageText;
 
     // Check if the search text is present on the page
-    if (pageTextLower.includes(searchTextLower)) {
+   // if (pageTextLower.includes(searchTextLower)) {
 
   //    csuContainer.textContent ="true";
      // alert('Text found on the page: ' + searchText);
-    } else {
+   // } else {
  //    csuContainer.textContent = "false";
      
      //   alert('Text not found on the page: ' + searchText);
-    }
+   // }
   }
 </script>
 
