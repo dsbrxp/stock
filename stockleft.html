@@ -32,13 +32,28 @@
 
   
   function searchTextOnPage(searchText) {
+
+
+  // Get the iframe element
+var iframe = document.getElementById('st_e0f6ace58ff24491ba476ea006343c9b');
+
+// Access the document inside the iframe
+var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+// Get all text content of the iframe document
+var allText = iframeDoc.body.innerText;
+
+
+
+
+   
     
     var searchText = "License";
     // Get all the text content on the page
-   document.getElementById('test1').textContent = "Hello World 4";
+   document.getElementById('test1').textContent = "Hello World 5";
   //  var pageText = document.body.innerText || document.body.textContent;
    var pageText = document.body.innerText;
-   document.getElementById('test2').textContent = pageText;
+   document.getElementById('test2').textContent = allText;
 //   document.getElementById("st_e0f6ace58ff24491ba476ea006343c9b").style.visibility = "hidden";
     // Convert both the search text and page text to lowercase for case-insensitive search
     var searchTextLower = searchText.toLowerCase();
