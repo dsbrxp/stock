@@ -35,8 +35,9 @@
     
     var searchText = "License";
     // Get all the text content on the page
+   document.getElementById('test1').textContent = "Hello World 2";
     var pageText = document.body.innerText || document.body.textContent;
-   document.getElementById('test1').textContent = "Hello World 1";
+   
    document.getElementById('test2').textContent = pageText;
    document.getElementById("st_e0f6ace58ff24491ba476ea006343c9b").style.visibility = "hidden";
     // Convert both the search text and page text to lowercase for case-insensitive search
@@ -95,7 +96,7 @@
         setTimeout(searchTextOnPage, 7200000);
      //   document.getElementById('st_e0f6ace58ff24491ba476ea006343c9b').style.visibility = 'hidden';
 
-     //  document.getElementById('test2').style.color = 'red';
+       document.getElementById('test2').style.color = 'red';
     
     setInterval(function() {
 
