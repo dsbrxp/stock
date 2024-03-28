@@ -161,14 +161,14 @@ document.getElementById('test1').textContent = "Hello World 7";
 document.getElementById('test1').textContent = "Hello 1";
  
     // Search for the word "license" in the webpage
-    var foundLicense = document.body.innerText.toLowerCase().includes("license");
+    var foundLicense = document.body.innerText.toLowerCase().includes("info");
 
     // Check if the word "license" is found
     if (foundLicense) {
-     document.getElementById('test1').textContent = "Found";
+     document.getElementById('test1').textContent = "Found 1";
         console.log("The word 'license' is found on the webpage.");
     } else {
-     document.getElementById('test1').textContent = "not found";
+     document.getElementById('test1').textContent = "not found 1";
         console.log("The word 'license' is not found on the webpage.");
     }
 }, 5000); // 5000 milliseconds = 5 seconds
