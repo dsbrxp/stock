@@ -171,36 +171,21 @@ function findHyperlink(linkUrl) {
     }, 60 * 60 * 1000); // 60 minutes in milliseconds
 
 
+
+   
+
+   setTimeout(function() {
 var linkUrl = "https://www.stockdio.com"; // Specify the hyperlink URL
 var foundLink = findHyperlink(linkUrl);
 if (foundLink) {
- document.getElementById('test1').textContent = "found 2";
+ document.getElementById('test1').textContent = "found 3";
     console.log("Hyperlink found:", foundLink);
 } else {
- document.getElementById('test1').textContent = "not found 2";
+ document.getElementById('test1').textContent = "not found 3";
     console.log("Hyperlink not found.");
 }
-   
-/*
-   setTimeout(function() {
-document.getElementById('test1').textContent = "Hello Before 6";
-    document.getElementById('test2').textContent = document.body.innerText;
- document.getElementById('test1').textContent = "Hello After 6";
-    // Search for the word "license" in the webpage
-    var foundLicense = document.body.innerText.toLowerCase().includes("key");
-
-    // Check if the word "license" is found
-    if (foundLicense) {
-     document.getElementById("st_e0f6ace58ff24491ba476ea006343c9b").style.visibility = "hidden";
-     document.getElementById('test1').textContent = "Found 6";
-        console.log("The word 'license' is found on the webpage.");
-    } else {
-     document.getElementById("st_e0f6ace58ff24491ba476ea006343c9b").style.visibility = "visible";
-     document.getElementById('test1').textContent = "not found 6";
-        console.log("The word 'license' is not found on the webpage.");
-    }
 }, 5000); // 5000 milliseconds = 5 seconds
-*/   
+  
   }
 
   // Call the function when the page is loaded
