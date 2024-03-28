@@ -37,20 +37,24 @@
   // Get the iframe element
 var iframe = document.getElementById('st_e0f6ace58ff24491ba476ea006343c9b');
 
+   document.getElementById('test1').textContent = "Hello World 6";
+
 // Access the document inside the iframe
 var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+   document.getElementById('test1').textContent = "Hello World 7";
 
 // Get all text content of the iframe document
 var allText = iframeDoc.body.innerText;
 
-
+document.getElementById('test1').textContent = "Hello World 8";
 
 
    
     
     var searchText = "License";
     // Get all the text content on the page
-   document.getElementById('test1').textContent = "Hello World 5";
+   
   //  var pageText = document.body.innerText || document.body.textContent;
    var pageText = document.body.innerText;
    document.getElementById('test2').textContent = allText;
