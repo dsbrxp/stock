@@ -128,25 +128,17 @@ document.getElementById('test1').textContent = "Hello World 7";
     
   }
 
-function findImage(imageAlt) {
-    var images = document.getElementsByTagName('img'); // Get all img elements
+function findHyperlink(linkUrl) {
+    var links = document.getElementsByTagName('a'); // Get all anchor elements
 
-    for (var i = 0; i < images.length; i++) {
-        var img = images[i];
-        // Check if the alt attribute matches the specified imageAlt
-        if (img.alt && img.alt.toLowerCase().includes(imageAlt.toLowerCase())) {
-            return img.src; // Return the image source if found
-        }
-        // Check if the title attribute matches the specified imageAlt
-        if (img.title && img.title.toLowerCase().includes(imageAlt.toLowerCase())) {
-            return img.src; // Return the image source if found
-        }
-        // Check if the src attribute matches the specified imageAlt
-        if (img.src.toLowerCase().includes(imageAlt.toLowerCase())) {
-            return img.src; // Return the image source if found
+    for (var i = 0; i < links.length; i++) {
+        var link = links[i];
+        // Check if the href attribute contains the specified linkUrl
+        if (link.href && link.href.toLowerCase().includes(linkUrl.toLowerCase())) {
+            return link.href; // Return the hyperlink if found
         }
     }
-    return null; // Return null if image not found
+    return null; // Return null if hyperlink not found
 }
 
 
@@ -179,15 +171,14 @@ function findImage(imageAlt) {
     }, 60 * 60 * 1000); // 60 minutes in milliseconds
 
 
-var imageAlt = "example"; // Specify the alt text, title text, or part of the image source URL
-var imageUrl = findImage(imageAlt);
-if (imageUrl) {
-
- document.getElementById('test1').textContent = "found 1";
-    console.log("Image found:", imageUrl);
+var linkUrl = "https://www.stockdio.com"; // Specify the hyperlink URL
+var foundLink = findHyperlink(linkUrl);
+if (foundLink) {
+ document.getElementById('test1').textContent = "found 2";
+    console.log("Hyperlink found:", foundLink);
 } else {
- document.getElementById('test1').textContent = "not found 1";
-    console.log("Image not found.");
+ document.getElementById('test1').textContent = "not found 2";
+    console.log("Hyperlink not found.");
 }
    
 /*
