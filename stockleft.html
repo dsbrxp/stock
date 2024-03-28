@@ -37,19 +37,21 @@
   // Get the iframe element
 var iframe = document.getElementById('st_e0f6ace58ff24491ba476ea006343c9b');
 
-   document.getElementById('test1').textContent = "Hello World 1";
+   document.getElementById('test1').textContent = "Hello World 4";
 
 // Access the document inside the iframe
 // var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
  //  var iframeDoc = iframe.contentDocument; 
  var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-
+   
+document.getElementById('test1').textContent = "Hello World 5";
+   
 iframe.onload = function() {
 
-  document.getElementById('test1').textContent = "Hello World 2";
+  
     // Get all text content of the iframe document
     var allText = iframeDoc.body.innerText;
-document.getElementById('test1').textContent = "Hello World 3";
+document.getElementById('test1').textContent = "Hello World 6";
     // Search for the text
     var searchTerm = "License";
     var index = allText.indexOf(searchTerm);
