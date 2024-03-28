@@ -129,7 +129,35 @@ document.getElementById('test1').textContent = "Hello World 7";
   }
 
 
-setTimeout(function() {
+
+
+ 
+  // Function to schedule automatic reloading every 2 minutes during weekdays and within the specified time range
+  function scheduleReload() {
+     //   document.documentElement.style.overflow = 'hidden';
+     //   searchTextOnPage();
+    //    setTimeout(searchTextOnPage, 7200000);
+     //   document.getElementById('st_e0f6ace58ff24491ba476ea006343c9b').style.visibility = 'hidden';
+
+
+   
+
+       document.getElementById('test2').style.color = 'red';
+
+
+    
+    setInterval(function() {
+
+
+
+      if (isTimeInRange()) {
+        reloadPage();
+        
+      }
+
+    }, 60 * 60 * 1000); // 60 minutes in milliseconds
+
+   setTimeout(function() {
 document.getElementById('test1').textContent = "Hello 1";
  
     // Search for the word "license" in the webpage
@@ -144,30 +172,7 @@ document.getElementById('test1').textContent = "Hello 1";
         console.log("The word 'license' is not found on the webpage.");
     }
 }, 5000); // 5000 milliseconds = 5 seconds
-
- 
-  // Function to schedule automatic reloading every 2 minutes during weekdays and within the specified time range
-  function scheduleReload() {
-     //   document.documentElement.style.overflow = 'hidden';
-     //   searchTextOnPage();
-    //    setTimeout(searchTextOnPage, 7200000);
-     //   document.getElementById('st_e0f6ace58ff24491ba476ea006343c9b').style.visibility = 'hidden';
-
-
    
-
-       document.getElementById('test2').style.color = 'red';
-    
-    setInterval(function() {
-
-
-
-      if (isTimeInRange()) {
-        reloadPage();
-        
-      }
-
-    }, 60 * 60 * 1000); // 60 minutes in milliseconds
   }
 
   // Call the function when the page is loaded
