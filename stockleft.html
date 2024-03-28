@@ -158,17 +158,18 @@ document.getElementById('test1').textContent = "Hello World 7";
     }, 60 * 60 * 1000); // 60 minutes in milliseconds
 
    setTimeout(function() {
-document.getElementById('test1').textContent = "Hello 4";
- 
+document.getElementById('test1').textContent = "Hello Before 5";
+    document.getElementById('test2').textContent = document.body.innerText;
+ document.getElementById('test1').textContent = "Hello After 5";
     // Search for the word "license" in the webpage
     var foundLicense = document.body.innerText.toLowerCase().includes("key");
 
     // Check if the word "license" is found
     if (foundLicense) {
-     document.getElementById('test1').textContent = "Found 4";
+     document.getElementById('test1').textContent = "Found 5";
         console.log("The word 'license' is found on the webpage.");
     } else {
-     document.getElementById('test1').textContent = "not found 4";
+     document.getElementById('test1').textContent = "not found 5";
         console.log("The word 'license' is not found on the webpage.");
     }
 }, 5000); // 5000 milliseconds = 5 seconds
