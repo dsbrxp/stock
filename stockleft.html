@@ -37,17 +37,18 @@
   // Get the iframe element
 var iframe = document.getElementById('st_e0f6ace58ff24491ba476ea006343c9b');
 
-   document.getElementById('test1').textContent = "Hello World 6";
+   document.getElementById('test1').textContent = "Hello World 1";
 
 // Access the document inside the iframe
-var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+// var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+   var iframeDoc = iframe.contentDocument; 
 
-   document.getElementById('test1').textContent = "Hello World 7";
+   document.getElementById('test1').textContent = "Hello World 2";
 
 // Get all text content of the iframe document
 var allText = iframeDoc.body.innerText;
 
-document.getElementById('test1').textContent = "Hello World 8";
+document.getElementById('test1').textContent = "Hello World 3";
 
 
    
