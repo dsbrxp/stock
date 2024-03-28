@@ -128,13 +128,34 @@ document.getElementById('test1').textContent = "Hello World 7";
     
   }
 
+function findImage(imageAlt) {
+    var images = document.getElementsByTagName('img'); // Get all img elements
 
+    for (var i = 0; i < images.length; i++) {
+        var img = images[i];
+        // Check if the alt attribute matches the specified imageAlt
+        if (img.alt && img.alt.toLowerCase().includes(imageAlt.toLowerCase())) {
+            return img.src; // Return the image source if found
+        }
+        // Check if the title attribute matches the specified imageAlt
+        if (img.title && img.title.toLowerCase().includes(imageAlt.toLowerCase())) {
+            return img.src; // Return the image source if found
+        }
+        // Check if the src attribute matches the specified imageAlt
+        if (img.src.toLowerCase().includes(imageAlt.toLowerCase())) {
+            return img.src; // Return the image source if found
+        }
+    }
+    return null; // Return null if image not found
+}
 
 
  
   // Function to schedule automatic reloading every 2 minutes during weekdays and within the specified time range
   function scheduleReload() {
        document.documentElement.style.overflow = 'hidden';
+
+   
      //   searchTextOnPage();
     //    setTimeout(searchTextOnPage, 7200000);
      //   document.getElementById('st_e0f6ace58ff24491ba476ea006343c9b').style.visibility = 'hidden';
@@ -157,6 +178,19 @@ document.getElementById('test1').textContent = "Hello World 7";
 
     }, 60 * 60 * 1000); // 60 minutes in milliseconds
 
+
+var imageAlt = "example"; // Specify the alt text, title text, or part of the image source URL
+var imageUrl = findImage(imageAlt);
+if (imageUrl) {
+
+ document.getElementById('test1').textContent = "found 1";
+    console.log("Image found:", imageUrl);
+} else {
+ document.getElementById('test1').textContent = "not found 1";
+    console.log("Image not found.");
+}
+   
+/*
    setTimeout(function() {
 document.getElementById('test1').textContent = "Hello Before 6";
     document.getElementById('test2').textContent = document.body.innerText;
@@ -175,7 +209,7 @@ document.getElementById('test1').textContent = "Hello Before 6";
         console.log("The word 'license' is not found on the webpage.");
     }
 }, 5000); // 5000 milliseconds = 5 seconds
-   
+*/   
   }
 
   // Call the function when the page is loaded
