@@ -1,19 +1,7 @@
-
-
 <script>
-
- window.onload = scheduleReload;
-
-// document.getElementById('st_e0f6ace58ff24491ba476ea006343c9b').style.visibility = 'hidden';
-//   document.getElementById('test2').style.visibility = 'hidden';
-// document.getElementById('test2').style.color = 'red';
-   
-  
-  
-
-    
-/*
- 
+document.documentElement.style.overflow = 'hidden';
+    setTimeout(searchTextOnPage, 7200000);
+ /* 
    if (typeof(stockdio_events) == "undefined") {
       stockdio_events = true;
       var stockdio_eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
@@ -27,58 +15,12 @@
    }
 
   */
+function searchTextOnPage(searchText) {
 
-
-/*
-  
-  function searchTextOnPage(searchText) {
-
-
-  // Get the iframe element
-var iframe = document.getElementById('st_e0f6ace58ff24491ba476ea006343c9b');
-
-   document.getElementById('test1').textContent = "Hello World 4";
-
-// Access the document inside the iframe
-// var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-   var iframeDoc = iframe.contentDocument; 
-
-   
-document.getElementById('test1').textContent = "Hello World 5";
-   
-iframe.onload = function() {
-
-  document.getElementById('test1').textContent = "Hello World 6";
-    // Get all text content of the iframe document
-    var allText = iframeDoc.body.innerText;
-document.getElementById('test1').textContent = "Hello World 7";
-    // Search for the text
-    var searchTerm = "License";
-    var index = allText.indexOf(searchTerm);
-
-    // Check if the text was found
-    if (index !== -1) {
-     document.getElementById('test1').textContent = "Found";
-        console.log("The text '" + searchTerm + "' was found in the iframe.");
-    } else {
-     document.getElementById('test1').textContent = "Not Found";
-        console.log("The text '" + searchTerm + "' was not found in the iframe.");
-    }
-};
-
-
-
-
-
-   
-    
-    var searchText = "License";
+  var searchText = "License";
     // Get all the text content on the page
-   
-  //  var pageText = document.body.innerText || document.body.textContent;
-   var pageText = document.body.innerText;
-   document.getElementById('test2').textContent = allText;
-//   document.getElementById("st_e0f6ace58ff24491ba476ea006343c9b").style.visibility = "hidden";
+    var pageText = document.body.innerText || document.body.textContent;
+
     // Convert both the search text and page text to lowercase for case-insensitive search
     var searchTextLower = searchText.toLowerCase();
     var pageTextLower = pageText.toLowerCase();
@@ -86,16 +28,14 @@ document.getElementById('test1').textContent = "Hello World 7";
     // Check if the search text is present on the page
     if (pageTextLower.includes(searchTextLower)) {
 
-   //   document.getElementById("st_e0f6ace58ff24491ba476ea006343c9b").style.visibility = "hidden";
-     // alert('Text found on the page: ' + searchText);
+      document.getElementById("st_e0f6ace58ff24491ba476ea006343c9b").style.visibility = "hidden";
+     //alert('Text found on the page: ' + searchText);
     } else {
-   //   document.getElementById("st_e0f6ace58ff24491ba476ea006343c9b").style.visibility = "visible";
+      document.getElementById("st_e0f6ace58ff24491ba476ea006343c9b").style.visibility = "visible";
      
-     //   alert('Text not found on the page: ' + searchText);
+      //  alert('Text not found on the page: ' + searchText);
     }
-    
 }
-*/
   
   // Function to check if it's a weekday (Monday to Friday)
   function isWeekday() {
@@ -118,97 +58,39 @@ document.getElementById('test1').textContent = "Hello World 7";
   // Function to reload the webpage
   function reloadPage() {
     
-            location.reload();
+    location.reload();
 
 
 
-   const now = new Date();
-//   document.getElementById('test').innerHTML = "Reload at "+now;
+//const now = new Date();
+ // document.getElementById('test').innerHTML = "Reload at "+now;
     
     
   }
 
-function findHyperlink(linkUrl) {
-    var links = document.getElementsByTagName('a'); // Get all anchor elements
-
-    for (var i = 0; i < links.length; i++) {
-        var link = links[i];
-        // Check if the href attribute contains the specified linkUrl
-        if (link.href && link.href.toLowerCase().includes(linkUrl.toLowerCase())) {
-            return link.href; // Return the hyperlink if found
-        }
-    }
-    return null; // Return null if hyperlink not found
-}
-
-
- 
   // Function to schedule automatic reloading every 2 minutes during weekdays and within the specified time range
   function scheduleReload() {
-       document.documentElement.style.overflow = 'hidden';
-
-   
-     //   searchTextOnPage();
-    //    setTimeout(searchTextOnPage, 7200000);
-     //   document.getElementById('st_e0f6ace58ff24491ba476ea006343c9b').style.visibility = 'hidden';
-
-
-   
-
-       document.getElementById('test2').style.color = 'red';
-
-
     
     setInterval(function() {
-
-
-
       if (isTimeInRange()) {
+        
+        
+        
         reloadPage();
         
       }
-
     }, 60 * 60 * 1000); // 60 minutes in milliseconds
-
-
-
-   
-/*
-   setTimeout(function() {
-var linkUrl = "https://www.stockdio.com"; // Specify the hyperlink URL
-var foundLink = findHyperlink(linkUrl);
-if (foundLink) {
- document.getElementById('test1').textContent = "found 3";
-    console.log("Hyperlink found:", foundLink);
-} else {
- document.getElementById('test1').textContent = "not found 3";
-    console.log("Hyperlink not found.");
-}
-}, 5000); // 5000 milliseconds = 5 seconds
-  
   }
-*/
+
   // Call the function when the page is loaded
 //  window.onload = scheduleReload;
-
-
-
-//  scheduleReload();
-  
-
-
-  
+  scheduleReload();
 </script>
+ 
 
-<!--
-<div style=" transform: scale(1.1); display:flex; position:absolute; top: 0%; left:2%;">
--->
-<body>
-<div id="test1"></div>
-<div id="test2"></div>
 
 <iframe style=" transform: scale(0.94); position:absolute; top:1.4%;left:-6%; display:flex" id='st_e0f6ace58ff24491ba476ea006343c9b' frameBorder='0' scrolling='no' width='200%' height='200%'src='https://api.stockdio.com/visualization/financial/charts/v1/Ticker?app-key=C325BA8DF99543CC851C35C2CB330ACE&stockExchange=TSX&symbols=CSU;GSY;DOL;TOI.V;IFC&scroll=No&palette=Brown-Sugar&layoutType=13&backgroundColor=00000000&onload=st_e0f6ace58ff24491ba476ea006343c9b'></iframe>
 
  
-</body>
+
 
